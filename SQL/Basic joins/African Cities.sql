@@ -1,16 +1,11 @@
-The first:
+https://www.hackerrank.com/challenges/african-cities/problem
 
-Select City.Name From City Inner Join Country 
-On CountryCode = Code
-Where Continent = 'Africa';
+Method 1:
 
-The second:
+select city.name from city 
+inner join country on city.countrycode=country.code where country.continent='Africa'
 
-Select City.Name From City, Country
-Where Code = CountryCode And Continent = 'Africa';
+Method 2:
 
-The third:
-
-Select Name From City Where CountryCode In (
-    Select Code From Country Where Continent = 'Africa'
-);
+select city.name from city 
+where countrycode in (select code from country where continent='Africa')
